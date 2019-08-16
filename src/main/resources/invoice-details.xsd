@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://soap.com/invoices" 
+xmlns:tns="http://soap.com/invoices" elementFormDefault="qualified">
+	
+	<xs:element name="GetInvoiceDetailsRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name= "id" type="xs:int"/>
+			</xs:sequence>	
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="GetInvoiceDetailsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name= "InvoiceDetails" type="tns:InvoiceDetails"/>
+			</xs:sequence>	
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="InvoiceDetails">
+		<xs:sequence>
+			<xs:element name="id" type="xs:int"/>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="invoiceNumber" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+</xs:schema>
